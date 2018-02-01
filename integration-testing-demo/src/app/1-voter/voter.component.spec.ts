@@ -1,4 +1,5 @@
 import { TestBed, ComponentFixture } from '@angular/core/testing';
+import {By} from '@angular/platform-browser';
 import { VoterComponent } from './voter.component';
 
 describe('VoterComponent', () => {
@@ -13,6 +14,21 @@ let fixture: ComponentFixture<VoterComponent>;
    component = fixture.componentInstance;
   });
 
-  it('', () => {
+  it('sould render total votes', () => {
+    //ARRANGE - see before
+   
+    component.othersVote = 20;
+    component.myVote = 1;
+    fixture.detectChanges(); // -- needed because we are running a test and anuglar change detection is not activated in test automatically.
+     
+    //ACT
+    // Where are we goig to render the total votes. IN the span with class vote-count
+    // QUERY DOM and get reference to element
+    //--------------  do I need the . in the pred below?
+    let de = fixture.debugElement.query(By.css('.vote-count'));
+    let el: HTMLElement = de.nativeElement;
+  
+    //ASSERT
+    expect(el.innerText).toContain('21');
   });
 });
