@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
-import { RouterModule } from '@angular/router'; 
+import { RouterModule } from '@angular/router';
 
 
 import { AppComponent } from './app.component';
@@ -36,7 +36,7 @@ import { GreeterComponent } from './greeter/greeter.component';
     FormsModule,
     HttpModule
   ],
-  providers: [],
+  providers: [],  // A singleton(s) per component
   bootstrap: [AppComponent]
 })
 export class AppModule { }
