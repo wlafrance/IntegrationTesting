@@ -41,4 +41,32 @@ describe('UserDetailsComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should redirect the user to the users page after saving',()=>{
+    //ARRANGE
+    let router = TestBed.get(Router);
+    let spy = spyOn(router, 'navigate');
+
+    // ACT
+    component.save();
+
+    //ASSERT
+    expect(spy).toHaveBeenCalledWith(['users']);
+
+
+  })
+
+  it('should redirect the user to the users page after saving',()=>{
+    //ARRANGE
+    let router = TestBed.get(Router);
+    let spy = spyOn(router, 'navigate');
+
+    // ACT
+    component.save();
+
+    //ASSERT
+    expect(spy).toHaveBeenCalledWith(['users']);
+
+
+  })
 });
