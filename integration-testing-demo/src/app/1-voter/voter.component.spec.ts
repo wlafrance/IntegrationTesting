@@ -31,4 +31,19 @@ let fixture: ComponentFixture<VoterComponent>;
     //ASSERT
     expect(el.innerText).toContain('21');
   });
+
+  it('sould highligth the upvote button if I have upvoted', () => {
+    //ARRANGE
+    component.myVote = 1;
+     fixture.detectChanges();
+
+   component.upVote();
+     
+    //ACT
+    let de = fixture.debugElement.query(By.css('.glyphicon-menu-up'));
+    //let el: HTMLElement = de.nativeElement;
+  
+    //ASSERT
+    expect(de.classes['highlighted']).toBeTruthy;
+  });
 });
