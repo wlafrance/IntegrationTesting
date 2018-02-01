@@ -1,3 +1,6 @@
+//PUT YOUR INTERGRATION TEST HERE
+// PROPERTY AND EVENT BINDING TEST
+
 import { TestBed, ComponentFixture } from '@angular/core/testing';
 import {By} from '@angular/platform-browser';
 import { VoterComponent } from './voter.component';
@@ -35,9 +38,9 @@ let fixture: ComponentFixture<VoterComponent>;
   it('sould highligth the upvote button if I have upvoted', () => {
     //ARRANGE
     component.myVote = 1;
-     fixture.detectChanges();
+    fixture.detectChanges();
 
-   component.upVote();
+    component.upVote();
      
     //ACT
     let de = fixture.debugElement.query(By.css('.glyphicon-menu-up'));
@@ -45,5 +48,13 @@ let fixture: ComponentFixture<VoterComponent>;
   
     //ASSERT
     expect(de.classes['highlighted']).toBeTruthy;
+  });
+
+  it('should increase total votes when I click the upvote button',()=>{
+    let button =fixture.debugElement.query(By.css('.glyphicon-menu-up'));
+    button.triggerEventHandler('click',null);
+
+    //ASSERT
+    expect(component.totalVotes).toBe(1);
   });
 });
