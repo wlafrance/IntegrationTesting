@@ -27,7 +27,7 @@ import { GreeterComponent } from './greeter/greeter.component';
     VoterComponent,
     UsersComponent,
     GreeterComponent,
-    //NavComponent,
+    NavComponent,
     //HighlightDirective
   ],
   imports: [
