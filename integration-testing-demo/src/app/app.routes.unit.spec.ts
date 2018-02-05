@@ -1,8 +1,8 @@
 // A SIMPLE UNIT TEST OUTSIDE THE ANGULAR ENVIRONMENT
 import {routes } from './app.routes';
 import { UsersComponent } from './users/users.component';
-import { TodosComponent } from './2-todos/todos.component';
-import { UserDetailsComponent } from './3-user-details/user-details.component';
+import { TodosComponent } from './20-todos/todos.component';
+import { UserDetailsComponent } from './30-user-details/user-details.component';
 
 // it('should contain a route for /users/:id',()=>{
 //     expect(routes).toContain({
